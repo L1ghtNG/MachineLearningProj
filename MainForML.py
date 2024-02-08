@@ -48,6 +48,7 @@ def matmul(A, B):
 
 #h = [[1, 1],[2, 4]]
 
+#f = [[1, 2], [3,4]] 
 
 
 #print(matmul(h,f))
