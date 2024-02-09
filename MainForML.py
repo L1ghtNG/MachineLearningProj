@@ -59,4 +59,4 @@ def invert(A):
                 [-A[1][0]/det, A[1][1]/det]]
     return inverted
 
-print(invert(h))
+#print(invert(h))
