@@ -66,3 +66,4 @@ def loadtxt(file):
     # med tex M[x][y] = M[x+1][y] när det kommer ett mellanslag, (.isspace())
     # och tex M[x][y] = M[x][y+1] när den byter rad
     # vet dock inte hur man skriver det bra
+    pass
