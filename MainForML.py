@@ -18,11 +18,11 @@ def powers(numbers, start, end):
         matrix.append(row) #delar upp matrixen i de rader som blir, hur delar man upp i raderna i resultatet?
     return matrix
 
-r = powers([2, 3, 4, 5, 6], 0, 6)
+#r = powers([2, 3, 4, 5, 6], 0, 6)
 #for row in r:
 #    print(row)
 
-print(r)
+#print(r)
 
 
 
@@ -30,11 +30,10 @@ def matmul(A, B):
 # bestäma formen på matrisenrna
     rows_A = len(A)
     cols_A = len(A[0])
-    rows_B = len(B)
+    #rows_B = len(B)
     cols_B = len(B[0])
 # Ställ in resultatmatrisen på nollor.
-    result = [[0 for row in range(cols_B)] for col in
-    range(rows_A)]
+    result = [[0 for row in range(cols_B)] for col in range(rows_A)]
 # gå igenom A:s rader
     for s in range(rows_A):
 # Gå igenom B:s kolonner
@@ -46,9 +45,18 @@ def matmul(A, B):
     return result
 
 
-#h = [[1, 1],[2, 4]]
+h = [[1, 1],[2, 4]]
 
 #f = [[1, 2], [3,4]] 
 
+#g = [[3, 2 , 1],[2, 3, 4]]
+#d = [[5, 2],[3, 4],[1, 2]]
+#print(matmul(g,d))
 
-#print(matmul(h,f))
+def invert(A):
+    det = A[0][0] * A[1][1] - A[0][1] * A[1][0]
+    inverted = [[A[0][0]/det , -A[0][1]/det ], 
+                [-A[1][0]/det, A[1][1]/det]]
+    return inverted
+
+print(invert(h))
