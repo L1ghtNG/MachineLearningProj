@@ -45,7 +45,7 @@ def matmul(A, B):
     return result
 
 
-h = [[1, 1],[2, 4]]
+#h = [[1, 1],[2, 4]]
 
 #f = [[1, 2], [3,4]] 
 
@@ -54,9 +54,9 @@ h = [[1, 1],[2, 4]]
 #print(matmul(g,d))
 
 def invert(A):
-    det = A[0][0] * A[1][1] - A[0][1] * A[1][0]
-    inverted = [[A[0][0]/det , -A[0][1]/det ], 
-                [-A[1][0]/det, A[1][1]/det]]
+    det = A[0][0] * A[1][1] - A[0][1] * A[1][0] # skapa determinant med formel
+    inverted = [[A[0][0]/det , -A[0][1]/det ],  
+                [-A[1][0]/det, A[1][1]/det]] # samma formel där 'det' är determinant
     return inverted
 
 #print(invert(h))
