@@ -61,14 +61,9 @@ def invert(A):
 #print(invert(h))
 
 def loadtxt(files):
-<<<<<<< HEAD
         inp_file = open(files, encoding="utf-8")
         
         inp_file.close()
-=======
-    
-    
->>>>>>> 4ce97584e09d20a05fc90ee8bcb1ed44e0646769
     # tänker att vi gör en if sats som säger att byta plats i matrisen när space kommer 
     # med tex M[x][y] = M[x+1][y] när det kommer ett mellanslag, (.isspace())
     # och tex M[x][y] = M[x][y+1] när den byter rad
