@@ -63,66 +63,36 @@ def invert(A):
 
 #print(invert(h))
 
-def loadtxtf(files):
-    
-    open(files, 'r') as file:
-    inp_file=file.read()
-    words = []
-    ylle = []
-    lines = inp_file
-    for line in lines:
-        start = 0
-        while start < len(line):
-            while start < len(line) and line[start].isspace():
-                start = start + 1
-            end = start
-            if end < len(line):
-                if line[end].isdigit():
-                    while end < len(line) and line[end].isdigit():
+def loadtxt(files):
+    with open(files, 'r' ) as file:  
+        words = []
+        ylle = []
+        lines = file
+        for line in lines:
+            start = 0
+            while start < len(line):
+                while start < len(line) and line[start].isspace():
+                    start = start + 1
+                end = start
+                if end < len(line):
+                    if line[end].isdigit():
+                        while end < len(line) and line[end].isdigit():
+                            end = end + 1
+                    else:
                         end = end + 1
-                else:
-                    end = end + 1
-                words.append(line[start:end])
-                ylle.append(words)
-                words.clear()
+                    words.append(line[start:end])
+                    ylle.append(words)
+                    words.clear()
                 
             start = end   
-    inp_file.close()
+        file.close()
     return ylle
-
-        
+  
     # tänker att vi gör en if sats som säger att byta plats i matrisen när space kommer 
     # med tex M[x][y] = M[x+1][y] när det kommer ett mellanslag, (.isspace())
     # och tex M[x][y] = M[x][y+1] när den byter rad
     # vet dock inte hur man skriver det bra
 
-#fileloading='chirps.txt'
-#loadtxt(fileloading)
+fileloading='chirps.txt'
+print(loadtxt(fileloading))
 
-def loadtxt(filename):
-    """
-    Load numbers from a file into a matrix.
-    
-    Arguments:
-    filename : str : name of the file containing space-separated numbers
-    
-    Returns:
-    list of lists : matrix containing the loaded numbers
-    """
-    # Initialize an empty list to store the matrix
-    matrix = []
-    
-    # Open the file and read lines
-    with open(filename, 'r') as file:
-        # Iterate over each line in the file
-        for line in file:
-            # Strip leading and trailing whitespace, then split the line into numbers
-            numbers = [float(num) for num in line.strip().split()]
-            # Append the list of numbers to the matrix
-            matrix.append(numbers)
-    
-    return matrix
-
-# Example usage:
-result = loadtxt("chirps.txt")
-print(result)
