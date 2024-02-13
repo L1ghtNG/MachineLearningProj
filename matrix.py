@@ -19,12 +19,11 @@ def powers(numbers, start, end):
     return matrix
 
 #r = powers([2, 3, 4, 5, 6], 0, 6)
-#for row in r:
-#    print(row)
 
 #print(r)
 
-
+#for row in r:
+#    print(row)
 
 def matmul(A, B):
 # bestäma formen på matrisenrna
@@ -45,7 +44,7 @@ def matmul(A, B):
     return result
 
 
-h = [[1, 1],[2, 4]]
+#h = [[1, 1],[2, 4]]
 
 #f = [[1, 2], [3,4]] 
 
@@ -54,17 +53,22 @@ h = [[1, 1],[2, 4]]
 #print(matmul(g,d))
 
 def invert(A):
-    det = A[0][0] * A[1][1] - A[0][1] * A[1][0]
-    inverted = [[A[0][0]/det , -A[0][1]/det ], 
-                [-A[1][0]/det, A[1][1]/det]]
+    det = A[0][0] * A[1][1] - A[0][1] * A[1][0] # skapa determinant med formel
+    inverted = [[A[0][0]/det , -A[0][1]/det ],  
+                [-A[1][0]/det, A[1][1]/det]] # samma formel där 'det' är determinant
     return inverted
 
 #print(invert(h))
 
 def loadtxt(files):
+<<<<<<< HEAD
         inp_file = open(files, encoding="utf-8")
         
         inp_file.close()
+=======
+    
+    
+>>>>>>> 4ce97584e09d20a05fc90ee8bcb1ed44e0646769
     # tänker att vi gör en if sats som säger att byta plats i matrisen när space kommer 
     # med tex M[x][y] = M[x+1][y] när det kommer ett mellanslag, (.isspace())
     # och tex M[x][y] = M[x][y+1] när den byter rad
