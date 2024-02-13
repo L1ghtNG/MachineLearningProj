@@ -64,29 +64,19 @@ def invert(A):
 #print(invert(h))
 
 def loadtxt(filename):
-    """
-    Load numbers from a file into a matrix.
-    
-    Arguments:
-    filename : str : name of the file containing space-separated numbers
-    
-    Returns:
-    list of lists : matrix containing the loaded numbers
-    """
-    # Initialize an empty list to store the matrix
     matrix = []
     
-    # Open the file and read lines
+    
     with open(filename, 'r') as file:
-        # Iterate over each line in the file
+        
         for line in file:
-            # Strip leading and trailing whitespace, then split the line into numbers
+           
             numbers = [float(num) for num in line.strip().split()]
-            # Append the list of numbers to the matrix
+           
             matrix.append(numbers)
     
     return matrix
 
-# Example usage:
+
 result = loadtxt("chirps.txt")
 print(result)
