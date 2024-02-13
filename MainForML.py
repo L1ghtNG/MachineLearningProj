@@ -19,12 +19,11 @@ def powers(numbers, start, end):
     return matrix
 
 #r = powers([2, 3, 4, 5, 6], 0, 6)
-#for row in r:
-#    print(row)
 
 #print(r)
 
-
+#for row in r:
+#    print(row)
 
 def matmul(A, B):
 # bestäma formen på matrisenrna
@@ -62,6 +61,8 @@ def invert(A):
 #print(invert(h))
 
 def loadtxt(files):
+    
+    
     # tänker att vi gör en if sats som säger att byta plats i matrisen när space kommer 
     # med tex M[x][y] = M[x+1][y] när det kommer ett mellanslag, (.isspace())
     # och tex M[x][y] = M[x][y+1] när den byter rad
