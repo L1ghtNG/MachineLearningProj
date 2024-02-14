@@ -4,6 +4,9 @@ inp_fileTwo= open(sys.argv[1], encoding="utf-8")
 T=str(inp_fileTwo)
 Matrix=m.loadtxt(T)
 inp_fileTwo.close()
+#denna ska ta position [alla][1] för y vice versa med x
+#installera numpy först
+numpy. transpose()
 X=0
 Y=0
 
