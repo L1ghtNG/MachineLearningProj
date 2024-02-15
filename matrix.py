@@ -64,19 +64,13 @@ def invert(A):
 #print(invert(h))
 
 def loadtxt(filename):
-    matrix = []
-    
-    
-    with open(filename, 'r') as file:
-        
-        for line in file:
-           
+    matrix = []   
+    with open(filename, 'r') as file:       
+        for line in file:           
             numbers = [float(num) for num in line.strip().split()]
-           
             matrix.append(numbers)
-    
     return matrix
 
 
-result = loadtxt("chirps.txt")
-print(result)
+#result = loadtxt("chirps.txt")
+#print(result)
