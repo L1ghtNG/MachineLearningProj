@@ -6,7 +6,7 @@ Matrix=m.loadtxt(T)
 inp_fileTwo.close()
 #denna ska ta position [alla][1] för y vice versa med x
 #installera numpy först
-numpy. transpose()
+numpy.transpose()
 X=0
 Y=0
 

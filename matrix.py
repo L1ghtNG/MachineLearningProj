@@ -3,15 +3,16 @@ import sys
 
 def transpose(M):
     new = []
-    for j in range(len(M[0])):
-        rad = []
-        for i in range(len(M)):
-            rad.append(M[i][j])
-        new.append(rad)
-    return(new)
+    if M == []:
+        return []
+    else:
+        for j in range(len(M[0])):
+            rad = []
+            for i in range(len(M)):
+                rad.append(M[i][j])
+            new.append(rad)
+        return(new)
 
-#f = [[1, 2], [3,4]]   
-#print(transpose(f))
 
 
 def powers(numbers, start, end):
@@ -29,39 +30,41 @@ def powers(numbers, start, end):
 #    print(row)
 
 def matmul(A, B):
-# bestäma formen på matrisenrna
-    rows_A = len(A)
-    cols_A = len(A[0])
-    #rows_B = len(B)
-    cols_B = len(B[0])
-# Ställ in resultatmatrisen på nollor.
-    result = [[0 for row in range(cols_B)] for col in range(rows_A)]
-# gå igenom A:s rader
-    for s in range(rows_A):
-# Gå igenom B:s kolonner
-        for j in range(cols_B):
-# gå igenom B:s rader
-            for k in range(cols_A):
-                result[s][j] += A[s][k] * B[k][j]
-
-    return result
+    if A == [] and B == []:
+        return []
+#bestäma formen på matrisenrna
+    else:
+        rows_A = len(A)
+        cols_A = len(A[0])
+        rows_B = len(B)
+        cols_B = len(B[0])
+        result = [[0 for row in range(cols_B)] for col in range(rows_A)] # Ställ in resultatmatrisen på nollor.
+        for s in range(rows_A): #gå igenom A:s rader
+            for j in range(cols_B): # Gå igenom B:s kolonner
+               for k in range(cols_A): # gå igenom B:s rader
+                    result[s][j] += A[s][k] * B[k][j]
+        return result
 
 
 #h = [[1, 1],[2, 4]]
 
-#f = [[1, 2], [3,4]] 
+f = [[1, 2], [3,4]] 
 
 #g = [[3, 2 , 1],[2, 3, 4]]
 #d = [[5, 2],[3, 4],[1, 2]]
-#print(matmul(g,d))
+j = []
+k = []
+#print(matmul(j,k))
+
 
 def invert(A):
     det = A[0][0] * A[1][1] - A[0][1] * A[1][0] # skapa determinant med formel
-    inverted = [[A[0][0]/det , -A[0][1]/det ],  
-                [-A[1][0]/det, A[1][1]/det]] # samma formel där 'det' är determinant
+    print(det)
+    inverted = [[A[1][1]/det, -A[0][1]/det], [-A[1][0]/det, A[0][0]/det]] # samma formel där 'det' är determinant
     return inverted
 
-#print(invert(h))
+print(f)
+print(invert(f))
 
 def loadtxt(filename):
     matrix = []   
