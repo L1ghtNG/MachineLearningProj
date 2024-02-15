@@ -59,12 +59,11 @@ k = []
 
 def invert(A):
     det = A[0][0] * A[1][1] - A[0][1] * A[1][0] # skapa determinant med formel
-    print(det)
     inverted = [[A[1][1]/det, -A[0][1]/det], [-A[1][0]/det, A[0][0]/det]] # samma formel där 'det' är determinant
     return inverted
 
-print(f)
-print(invert(f))
+#print(f)
+#print(invert(f))
 
 def loadtxt(filename):
     matrix = []   

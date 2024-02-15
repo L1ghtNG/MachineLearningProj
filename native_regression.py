@@ -1,18 +1,23 @@
-import matrix as m
+from matrix import *
 import sys
-inp_fileTwo= open(sys.argv[1], encoding="utf-8")
+import matplotlib.pyplot as plt
+
+inp_fileTwo= sys.argv[1]
 T=str(inp_fileTwo)
-Matrix=m.loadtxt(T)
-inp_fileTwo.close()
+matris=loadtxt(T)
+
+
 #denna ska ta position [alla][1] för y vice versa med x
 #installera numpy först
-numpy.transpose()
-X=0
-Y=0
+
+X0 = transpose(matris)
+Y0 = transpose(matris)
+X=X0[0]
+Y=Y0[1]
 
 #innan detta måste vi definera x och y utifrån matrisen vi får från loadtxt vilket står vad somm är x och y i instruktionerna 
-Xp  = m.powers(X,0,1)
-Yp  = m.powers(Y,1,1)
-Xpt = m.transpose(Xp)
+Xp  = powers(X,0,1)
+Yp  = powers(Y,1,1)
+Xpt = transpose(Xp)
 
-[[b],[m]] = m.matmul(m.invert(m.matmul(Xpt,Xp)),m.matmul(Xpt,Yp))
+[[b],[m]] = matmul(invert(matmul(Xpt,Xp)),matmul(Xpt,Yp))
