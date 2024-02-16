@@ -3,7 +3,7 @@ import sys
 import matplotlib.pyplot as plt
 
 inp_fileTwo= sys.argv[1]
-T=str(inp_fileTwo)
+T=(inp_fileTwo)
 matris=loadtxt(T)
 
 
@@ -20,11 +20,16 @@ Xpt = transpose(Xp)
 
 [[b],[m]] = matmul(invert(matmul(Xpt,Xp)),matmul(Xpt,Yp))
 
-Y2 = b + m * X # får inte den att fungerna, den ska använda varje värde för X och skapa ett Y värde 
+
+Y2 = []
+for x in X:   
+    y = b + m * x
+    Y2.append(y) # får inte den att fungerna, den ska använda varje värde för X och skapa ett Y värde 
     
+#print(m)
 
 plt.plot(X,Y,'ro')  #sätter ut prickarna i grafen
-plt.plot(X,Y2) # lägger ut linejen i grafen
+plt.plot(X,Y2) # lägger ut linjen i grafen
 plt.show()
 
 #för att 'runna' koden ska du kopiera in 'python3 native_regression.py chirps.txt' i terminalen 
