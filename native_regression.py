@@ -21,12 +21,12 @@ Xpt = transpose(Xp)
 [[b],[m]] = matmul(invert(matmul(Xpt,Xp)),matmul(Xpt,Yp))
 
 
-Y2 = []
-for x in X:   
-    y = b + m * x
-    Y2.append(y) # får inte den att fungerna, den ska använda varje värde för X och skapa ett Y värde 
+Y2 = [] # tom lista
+for x in X:   # for loop
+    y = b + m * x # lilla x går igenom varje värde på stora X
+    Y2.append(y) # lägger till varje värde i en lista
     
-#print(m)
+
 
 plt.plot(X,Y,'ro')  #sätter ut prickarna i grafen
 plt.plot(X,Y2) # lägger ut linjen i grafen
