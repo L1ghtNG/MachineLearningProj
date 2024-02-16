@@ -1,5 +1,6 @@
 from numpy import *
 import sys
+import matplotlib.pyplot as plt
 
 inp_fileTwo= sys.argv[1]
 T=(inp_fileTwo)
@@ -14,9 +15,7 @@ def powers(numbers, start, end):
     return matris
 
 n = int(sys.argv[2])
-#r = powers([2, 3, 4, 5, 6], 0, 6)
 
-#print(r)
 def main():
     pass
 
@@ -32,9 +31,18 @@ a = a[:,0]
 
 def poly(a,x):
     y = 0 
-    for y in range[:x]:
-         
+    for h,j in enumerate(a):
+        y = y +  j * x**h
+    return y 
 
+Y2 = poly(a,X)
+
+# använd funktionen min och max för att hitta största och minsta värdet i listan
+# sätt sedan n = differens mellan max och min / 0,2
+
+
+
+linspace(X[0],X[-1],n).tolist()
 plt.plot(X,Y,'ro')
 plt.plot(X,Y2)
 plt.show()
