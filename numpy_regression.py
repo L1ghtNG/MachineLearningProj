@@ -14,35 +14,31 @@ def powers(numbers, start, end):
         matris = array(matrix)
     return matris
 
-n = int(sys.argv[2])
+def poly(a,x):
+    y = 0 
+    for h,j in enumerate(a):
+        y = y + j * x**h
+    return y 
 
-def main():
-    pass
+n = int(sys.argv[2])
 
 X=data[:,0]
 Y=data[:,1] 
 Xp  = powers(X,0,n)
 Yp  = powers(Y,1,1)
 Xpt = Xp.transpose()
-
 a = matmul(linalg.inv(matmul(Xpt,Xp)),matmul(Xpt,Yp))
 a = a[:,0]
 
+ma = max(X) # bestäm största värdet i matris
+mi = min(X) # minsta 
+spc = int(ma - mi / 0.2) # space mellan punkter i graf
 
-def poly(a,x):
-    y = 0 
-    for h,j in enumerate(a):
-        y = y +  j * x**h
-    return y 
+Y2 = []
+X2 = linspace(mi,ma,spc).tolist()
+for x in X2: 
+    Y2.append(poly(a,x))
 
-Y2 = poly(a,X)
-
-# använd funktionen min och max för att hitta största och minsta värdet i listan
-# sätt sedan n = differens mellan max och min / 0,2
-
-
-
-linspace(X[0],X[-1],n).tolist()
 plt.plot(X,Y,'ro')
-plt.plot(X,Y2)
+plt.plot(X2,Y2)
 plt.show()
